@@ -14,9 +14,12 @@ class ListCompanies  extends Component {
   
   render() { 
     return (
+     <div>
       <ul> 
         {this.listFunction()}
       </ul>
+      <div>{this.props.totalCompanies}</div>
+      </div> 
      );
   }
 }

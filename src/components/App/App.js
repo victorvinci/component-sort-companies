@@ -8,7 +8,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      companiesData: []
+      companiesData: [],
+      totalCompanies: 0
      }
   }
 
@@ -17,7 +18,7 @@ class App extends Component {
     .then(results => {
       return results.json();
     }).then(data => {
-      return this.setState({companiesData: data.items})
+      return this.setState({companiesData: data.items, totalCompanies: data.total})
     })
   }
 
@@ -25,7 +26,7 @@ class App extends Component {
     // console.log(this.state.companiesData)
     return (
       <div>
-        <ListCompanies companiesData={this.state.companiesData}></ListCompanies>
+        <ListCompanies companiesData={this.state.companiesData} totalCompanies={this.state.totalCompanies}></ListCompanies>
       </div>
     );
   }
