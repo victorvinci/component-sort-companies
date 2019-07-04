@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from '../../assets/logos/logo.svg';
 import './App.scss';
 
+import ListCompanies from '../list-companies/ListCompanies'
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -20,9 +22,10 @@ class App extends Component {
   }
 
   render() { 
-    console.log(this.state.companiesData)
+    // console.log(this.state.companiesData)
     return (
       <div>
+        <ListCompanies companiesData={this.state.companiesData}></ListCompanies>
       </div>
     );
   }
