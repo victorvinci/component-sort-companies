@@ -9,7 +9,8 @@ class App extends Component {
     super(props);
     this.state = { 
       companiesData: [],
-      totalCompanies: 0
+      totalCompanies: 0,
+      clicked: false
      }
   }
 
@@ -23,20 +24,52 @@ class App extends Component {
   }
 
   sortName = () => {
-    let names = this.state.companiesData.sort(function(a, b){
+    let namesAtoZ = this.state.companiesData.sort(function(a, b){
       if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
       if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
       return 0;
-  });
-    return this.setState({companiesData: names})
+    });
 
+    if (this.state.clicked === false){
+      return this.setState({companiesData: namesAtoZ, clicked: true})
+    } else {
+      return this.setState({companiesData: namesAtoZ.reverse(), clicked: false})
+    }
+  }
+
+  sortRelevance = () => {
+    let relevance0to1 = this.state.companiesData.sort(function(a, b){
+      if(a.relevance < b.relevance) { return 1; }
+      if(a.relevance > b.relevance) { return -1; }
+      return 0;
+    });
+
+    if (this.state.clicked === false){
+      return this.setState({companiesData: relevance0to1, clicked: true})
+    } else {
+      return this.setState({companiesData: relevance0to1.reverse(), clicked: false})
+    }
+  }
+
+  sortYear = () => {
+    let year0to1 = this.state.companiesData.sort(function(a, b){
+      if(a.yearFounded < b.yearFounded) { return 1; }
+      if(a.yearFounded > b.yearFounded) { return -1; }
+      return 0;
+    });
+
+    if (this.state.clicked === false){
+      return this.setState({companiesData: year0to1, clicked: true})
+    } else {
+      return this.setState({companiesData: year0to1.reverse(), clicked: false})
+    }
   }
 
   render() { 
     // console.log(this.state.companiesData)
     return (
       <div>
-        <ListCompanies companiesData={this.state.companiesData} totalCompanies={this.state.totalCompanies} sortName={this.sortName}></ListCompanies>
+        <ListCompanies companiesData={this.state.companiesData} totalCompanies={this.state.totalCompanies} sortName={this.sortName} sortRelevance={this.sortRelevance} sortYear={this.sortYear}></ListCompanies>
       </div>
     );
   }
