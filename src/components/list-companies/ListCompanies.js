@@ -15,10 +15,13 @@ class ListCompanies  extends Component {
   render() { 
     return (
      <div>
-      <ul> 
-        {this.listFunction()}
-      </ul>
-      <div>{this.props.totalCompanies}</div>
+        <button type="button" onClick={this.props.sortName}>Sort by Name</button>
+        <button type="button"></button>
+        <button type="button"></button>
+        <ul> 
+          {this.listFunction()}
+        </ul>
+        <div>{this.props.totalCompanies}</div>
       </div> 
      );
   }

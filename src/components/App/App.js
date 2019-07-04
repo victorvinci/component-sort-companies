@@ -22,11 +22,21 @@ class App extends Component {
     })
   }
 
+  sortName = () => {
+    let names = this.state.companiesData.sort(function(a, b){
+      if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
+      if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
+      return 0;
+  });
+    return this.setState({companiesData: names})
+
+  }
+
   render() { 
     // console.log(this.state.companiesData)
     return (
       <div>
-        <ListCompanies companiesData={this.state.companiesData} totalCompanies={this.state.totalCompanies}></ListCompanies>
+        <ListCompanies companiesData={this.state.companiesData} totalCompanies={this.state.totalCompanies} sortName={this.sortName}></ListCompanies>
       </div>
     );
   }
