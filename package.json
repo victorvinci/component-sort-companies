@@ -2,7 +2,7 @@
   "name": "testing-create-react-app",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "",
+  "homepage" : "https://victorvinci.github.io/component-sort-companies/",
   "dependencies": {
     "@babel/core": "7.4.3",
     "@svgr/webpack": "4.1.0",
