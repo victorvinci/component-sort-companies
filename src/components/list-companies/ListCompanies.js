@@ -15,8 +15,8 @@ class ListCompanies  extends Component {
   render() { 
     return (
      <section className="list-container">
-     <header>Total of {this.props.totalCompanies} companies</header>
-        <ul> 
+     <header id="total-companies">Total of {this.props.totalCompanies} companies</header>
+        <ul id="list-total-companies"> 
           {this.listFunction()}
         </ul>
       </section> 

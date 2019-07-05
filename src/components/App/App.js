@@ -98,12 +98,12 @@ class App extends Component {
     const indexOfFirstCompany = indexOfLastCompany - this.state.companiesPerPage;
     const currentCompanies = this.state.companiesData.slice(indexOfFirstCompany, indexOfLastCompany);
 
+     // create the page numbers that will appear in the bottom of the list
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(this.state.companiesData.length / this.state.companiesPerPage); i++) {
       pageNumbers.push(i);
     }
 
-    // create the page numbers that will appear in the bottom of the list
     const renderPageNumbers = pageNumbers.map(number => {
       return (
         <li
@@ -121,9 +121,9 @@ class App extends Component {
       <article>
         <header><h1>Find the best company for you!</h1></header>
         <nav className="buttons-container">
-          <button type="button" onClick={this.sortName}>Sort by Name</button>
-          <button type="button" onClick={this.sortRelevance}>Sort by Relevance</button>
-          <button type="button" onClick={this.sortYear}>Sort by Year</button>
+          <button type="button" onClick={this.sortName}>Sort by Name {this.state.sortName ? ' ▲' : ' ▼'}</button>
+          <button type="button" onClick={this.sortRelevance}>Sort by Relevance {this.state.sortRelevance ? ' ▲' : ' ▼'}</button>
+          <button type="button" onClick={this.sortYear}>Sort by Year {this.state.sortYear ? ' ▲' : ' ▼'}</button>
         </nav>
         <ListCompanies 
           companiesData={currentCompanies} 
