@@ -13,10 +13,18 @@ img {
   align-self: end;
   max-width: 110px;
   width: 20%;
-  margin: 5px;
+  margin: 5px 40px 5px 5px;
   padding: 5px;
 }
 
 p {
   width: 80%;
+  margin: 0;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 5px;
+  font-size: 12px;
 }
