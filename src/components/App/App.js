@@ -12,7 +12,9 @@ class App extends Component {
       totalCompanies: 0,
       sortName: false,
       sortRelevance: false,
-      sortYear: false
+      sortYear: false,
+      currentPage: 1,
+      companiesPerPage: 3
      }
   }
 
@@ -24,6 +26,20 @@ class App extends Component {
     }).then(data => {
       return this.setState({companiesData: data.items, totalCompanies: data.total})
     })
+  }
+
+  handleClick = (event) => {
+    let pages = document.querySelectorAll('.page-numbers')
+
+      if (event.target.id === "1") {
+        event.target.classList.add("clicked")
+      } if (event.target.id === "2") {
+        event.target.classList.add("clicked")
+      }
+      
+    this.setState({
+      currentPage: Number(event.target.id)
+    });
   }
 
   sortName = () => {
@@ -69,7 +85,33 @@ class App extends Component {
   }
 
   render() { 
-    // console.log(this.state.companiesData)
+
+    const { companiesData, currentPage, companiesPerPage } = this.state;
+
+        // Logic for displaying current todos
+        const indexOfLastCompany = currentPage * companiesPerPage;
+        const indexOfFirstCompany = indexOfLastCompany - companiesPerPage;
+        const currentCompanies = companiesData.slice(indexOfFirstCompany, indexOfLastCompany);
+
+
+        const pageNumbers = [];
+        for (let i = 1; i <= Math.ceil(companiesData.length / companiesPerPage); i++) {
+          pageNumbers.push(i);
+        }
+
+
+        const renderPageNumbers = pageNumbers.map(number => {
+          return (
+            <li
+              key={number}
+              id={number}
+              onClick={this.handleClick}
+              className={`page-number`}
+            >
+              {number}
+            </li>
+          );
+        });
     return (
       <article>
         <header><h1>Find the best company for you!</h1></header>
@@ -79,12 +121,13 @@ class App extends Component {
           <button type="button" onClick={this.sortYear}>Sort by Year</button>
         </nav>
         <ListCompanies 
-          companiesData={this.state.companiesData} 
+          companiesData={currentCompanies} 
           totalCompanies={this.state.totalCompanies} 
           sortName={this.sortName} 
           sortRelevance={this.sortRelevance} 
           sortYear={this.sortYear}>
         </ListCompanies>
+        <ul id="page-numbers">{renderPageNumbers}</ul>
       </article>
 
     );
