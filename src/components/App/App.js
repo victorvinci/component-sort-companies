@@ -28,12 +28,21 @@ class App extends Component {
     })
   }
 
+  removeClickedClass = () => {
+    let clickedClass = document.querySelector(".clicked")
+    if (clickedClass ) {
+      clickedClass.classList.remove('clicked')
+    }
+  }
+
   handleClick = (event) => {
-    let pages = document.querySelectorAll('.page-numbers')
 
       if (event.target.id === "1") {
+        this.removeClickedClass();
         event.target.classList.add("clicked")
       } if (event.target.id === "2") {
+
+        this.removeClickedClass();
         event.target.classList.add("clicked")
       }
       
@@ -43,20 +52,23 @@ class App extends Component {
   }
 
   sortName = () => {
+    this.removeClickedClass();
+    document.getElementById('1').classList.add('clicked')
     let namesAtoZ = this.state.companiesData.sort(function(a, b){
       if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
       if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
       return 0;
     });
-
     if (this.state.sortName === false){
-      return this.setState({companiesData: namesAtoZ, sortName: true})
+      return this.setState({companiesData: namesAtoZ, sortName: true, currentPage: 1})
     } else {
-      return this.setState({companiesData: namesAtoZ.reverse(), sortName: false})
+      return this.setState({companiesData: namesAtoZ.reverse(), sortName: false, currentPage: 1})
     }
   }
 
   sortRelevance = () => {
+    this.removeClickedClass();
+    document.getElementById('1').classList.add('clicked')
     let relevance0to1 = this.state.companiesData.sort(function(a, b){
       if(a.relevance < b.relevance) { return 1; }
       if(a.relevance > b.relevance) { return -1; }
@@ -64,13 +76,15 @@ class App extends Component {
     });
 
     if (this.state.sortRelevance === false){
-      return this.setState({companiesData: relevance0to1, sortRelevance: true})
+      return this.setState({companiesData: relevance0to1, sortRelevance: true, currentPage: 1})
     } else {
-      return this.setState({companiesData: relevance0to1.reverse(), sortRelevance: false})
+      return this.setState({companiesData: relevance0to1.reverse(), sortRelevance: false, currentPage: 1})
     }
   }
 
   sortYear = () => {
+    this.removeClickedClass();
+    document.getElementById('1').classList.add('clicked')
     let year0to1 = this.state.companiesData.sort(function(a, b){
       if(a.yearFounded < b.yearFounded) { return 1; }
       if(a.yearFounded > b.yearFounded) { return -1; }
@@ -78,40 +92,38 @@ class App extends Component {
     });
 
     if (this.state.sortYear === false){
-      return this.setState({companiesData: year0to1, sortYear: true})
+      return this.setState({companiesData: year0to1, sortYear: true, currentPage: 1})
     } else {
-      return this.setState({companiesData: year0to1.reverse(), sortYear: false})
+      return this.setState({companiesData: year0to1.reverse(), sortYear: false, currentPage: 1})
     }
   }
 
-  render() { 
+  render() {
 
-    const { companiesData, currentPage, companiesPerPage } = this.state;
+    // Logic for displaying current companies
+    const indexOfLastCompany = this.state.currentPage * this.state.companiesPerPage;
+    const indexOfFirstCompany = indexOfLastCompany - this.state.companiesPerPage;
+    const currentCompanies = this.state.companiesData.slice(indexOfFirstCompany, indexOfLastCompany);
 
-        // Logic for displaying current todos
-        const indexOfLastCompany = currentPage * companiesPerPage;
-        const indexOfFirstCompany = indexOfLastCompany - companiesPerPage;
-        const currentCompanies = companiesData.slice(indexOfFirstCompany, indexOfLastCompany);
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(this.state.companiesData.length / this.state.companiesPerPage); i++) {
+      pageNumbers.push(i);
+    }
 
+    // create the page numbers that will appear in the bottom of the list
+    const renderPageNumbers = pageNumbers.map(number => {
+      return (
+        <li
+          key={number}
+          id={number}
+          onClick={this.handleClick}
+          className={`page-number`}
+        >
+          {number}
+        </li>
+      );
+    });
 
-        const pageNumbers = [];
-        for (let i = 1; i <= Math.ceil(companiesData.length / companiesPerPage); i++) {
-          pageNumbers.push(i);
-        }
-
-
-        const renderPageNumbers = pageNumbers.map(number => {
-          return (
-            <li
-              key={number}
-              id={number}
-              onClick={this.handleClick}
-              className={`page-number`}
-            >
-              {number}
-            </li>
-          );
-        });
     return (
       <article>
         <header><h1>Find the best company for you!</h1></header>
