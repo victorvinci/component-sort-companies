@@ -36,16 +36,9 @@ class App extends Component {
   }
 
   handleClick = (event) => {
+    this.removeClickedClass();
+    event.target.classList.add("clicked")
 
-      if (event.target.id === "1") {
-        this.removeClickedClass();
-        event.target.classList.add("clicked")
-      } if (event.target.id === "2") {
-
-        this.removeClickedClass();
-        event.target.classList.add("clicked")
-      }
-      
     this.setState({
       currentPage: Number(event.target.id)
     });

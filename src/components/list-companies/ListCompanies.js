@@ -15,10 +15,10 @@ class ListCompanies  extends Component {
   render() { 
     return (
      <section className="list-container">
+     <header>Total of {this.props.totalCompanies} companies</header>
         <ul> 
           {this.listFunction()}
         </ul>
-        <footer>{this.props.totalCompanies}</footer>
       </section> 
      );
   }
