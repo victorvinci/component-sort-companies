@@ -71,7 +71,13 @@ class App extends Component {
   render() { 
     // console.log(this.state.companiesData)
     return (
-      <div>
+      <article>
+        <header><h1>Find the best company for you!</h1></header>
+        <nav className="buttons-container">
+          <button type="button" onClick={this.sortName}>Sort by Name</button>
+          <button type="button" onClick={this.sortRelevance}>Sort by Relevance</button>
+          <button type="button" onClick={this.sortYear}>Sort by Year</button>
+        </nav>
         <ListCompanies 
           companiesData={this.state.companiesData} 
           totalCompanies={this.state.totalCompanies} 
@@ -79,7 +85,8 @@ class App extends Component {
           sortRelevance={this.sortRelevance} 
           sortYear={this.sortYear}>
         </ListCompanies>
-      </div>
+      </article>
+
     );
   }
 }

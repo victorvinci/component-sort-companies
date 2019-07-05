@@ -14,15 +14,12 @@ class ListCompanies  extends Component {
   
   render() { 
     return (
-     <div>
-        <button type="button" onClick={this.props.sortName}>Sort by Name</button>
-        <button type="button" onClick={this.props.sortRelevance}>Sort by Relevance</button>
-        <button type="button" onClick={this.props.sortYear}>Sort by Year</button>
+     <section className="list-container">
         <ul> 
           {this.listFunction()}
         </ul>
-        <div>{this.props.totalCompanies}</div>
-      </div> 
+        <footer>{this.props.totalCompanies}</footer>
+      </section> 
      );
   }
 }
