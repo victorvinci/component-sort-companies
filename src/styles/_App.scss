@@ -16,8 +16,10 @@ h1{
   width: 45%;
 }
 button{
-  width: 100%;
+  width: 25%;
+  height: 55px;
   margin: 5px;
+  font-size: 12px;
 }
 
 #page-numbers {
@@ -46,6 +48,6 @@ button{
   }
 
   button{
-    font-size: 12px;
+    width: 100%;
   }
 }
