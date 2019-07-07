@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/component-sort-companies/static/css/main.9d8920af.chunk.css",
+    "main.css": "/component-sort-companies/static/css/main.97039b67.chunk.css",
     "main.js": "/component-sort-companies/static/js/main.54665093.chunk.js",
     "main.js.map": "/component-sort-companies/static/js/main.54665093.chunk.js.map",
     "runtime~main.js": "/component-sort-companies/static/js/runtime~main.0993ddb6.js",
@@ -8,8 +8,8 @@
     "static/js/2.d6a534e5.chunk.js": "/component-sort-companies/static/js/2.d6a534e5.chunk.js",
     "static/js/2.d6a534e5.chunk.js.map": "/component-sort-companies/static/js/2.d6a534e5.chunk.js.map",
     "index.html": "/component-sort-companies/index.html",
-    "precache-manifest.50711d0a3bfba5bde6274ba17705c433.js": "/component-sort-companies/precache-manifest.50711d0a3bfba5bde6274ba17705c433.js",
+    "precache-manifest.c7543371e47ddb351bda472e908f8c34.js": "/component-sort-companies/precache-manifest.c7543371e47ddb351bda472e908f8c34.js",
     "service-worker.js": "/component-sort-companies/service-worker.js",
-    "static/css/main.9d8920af.chunk.css.map": "/component-sort-companies/static/css/main.9d8920af.chunk.css.map"
+    "static/css/main.97039b67.chunk.css.map": "/component-sort-companies/static/css/main.97039b67.chunk.css.map"
   }
 }
