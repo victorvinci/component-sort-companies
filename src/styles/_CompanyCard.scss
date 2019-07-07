@@ -13,11 +13,11 @@ img {
   align-self: flex-end;
   max-width: 110px;
   width: 20%;
-  padding: 25px;
+  padding: 20px;
 }
 
 p {
-  width: 80%;
+  width: 75%;
   margin: 0;
 }
 
@@ -26,4 +26,18 @@ aside {
   flex-direction: column;
   margin: 10px 5px;
   font-size: 12px;
+}
+
+@media (max-width: 768px ) {
+  p {
+    width: 70%;
+  }
+
+  img {
+    position: absolute;
+    align-self: flex-end;
+    max-width: 110px;
+    width: 20%;
+    padding: 10px;
+  }
 }
