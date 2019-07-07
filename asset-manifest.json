@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/component-sort-companies/static/css/main.9d8920af.chunk.css",
+    "main.js": "/component-sort-companies/static/js/main.a810a6cf.chunk.js",
+    "main.js.map": "/component-sort-companies/static/js/main.a810a6cf.chunk.js.map",
+    "runtime~main.js": "/component-sort-companies/static/js/runtime~main.0993ddb6.js",
+    "runtime~main.js.map": "/component-sort-companies/static/js/runtime~main.0993ddb6.js.map",
+    "static/js/2.d6a534e5.chunk.js": "/component-sort-companies/static/js/2.d6a534e5.chunk.js",
+    "static/js/2.d6a534e5.chunk.js.map": "/component-sort-companies/static/js/2.d6a534e5.chunk.js.map",
+    "index.html": "/component-sort-companies/index.html",
+    "precache-manifest.818b5b1872c2def2c52e7ea0f009dcc1.js": "/component-sort-companies/precache-manifest.818b5b1872c2def2c52e7ea0f009dcc1.js",
+    "service-worker.js": "/component-sort-companies/service-worker.js",
+    "static/css/main.9d8920af.chunk.css.map": "/component-sort-companies/static/css/main.9d8920af.chunk.css.map"
+  }
+}
