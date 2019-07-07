@@ -1,5 +1,5 @@
 # component-sort-companies
-A simple React component to sort lists
+A simple React component to sort a list of companies
 
 git clone `git@github.com:victorvinci/component-sort-companies.git`<br>
 `cd /project-folder` <br>
