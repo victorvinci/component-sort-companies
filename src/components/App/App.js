@@ -20,7 +20,7 @@ class App extends Component {
   // fecth API and update state
   componentDidMount() {
     // get API data
-    fetch('http://www.mocky.io/v2/5d1a17de2f00002c00fd748e')
+    fetch('https://www.mocky.io/v2/5d1a17de2f00002c00fd748e')
     .then(results => {
       return results.json();
     }).then(data => {
