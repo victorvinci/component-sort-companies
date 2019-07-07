@@ -17,6 +17,7 @@ class App extends Component {
      }
   }
 
+  // fecth API and update state
   componentDidMount() {
     // get API data
     fetch('http://www.mocky.io/v2/5d1a17de2f00002c00fd748e')
@@ -27,6 +28,7 @@ class App extends Component {
     })
   }
 
+  // remove clicked class if it already exist
   removeClickedClass = () => {
     let clickedClass = document.querySelector(".clicked")
     if (clickedClass ) {
@@ -34,7 +36,8 @@ class App extends Component {
     }
   }
 
-  handleClick = (event) => {
+  // add clicked class to the clicked page number and update state
+  addClickedClass = (event) => {
     this.removeClickedClass();
     event.target.classList.add("clicked")
 
@@ -43,6 +46,7 @@ class App extends Component {
     });
   }
 
+  // function called on click to sort the list by name from AtoZ or ZtoA
   sortName = () => {
     this.removeClickedClass();
     document.getElementById('1').classList.add('clicked')
@@ -58,6 +62,7 @@ class App extends Component {
     }
   }
 
+  // function called on click to sort the list by relevance from 0to1 or 1to0
   sortRelevance = () => {
     this.removeClickedClass();
     document.getElementById('1').classList.add('clicked')
@@ -74,6 +79,7 @@ class App extends Component {
     }
   }
 
+  // function called on click to sort the list by year from 0to1 or 1to0
   sortYear = () => {
     this.removeClickedClass();
     document.getElementById('1').classList.add('clicked')
@@ -97,7 +103,7 @@ class App extends Component {
     const indexOfFirstCompany = indexOfLastCompany - this.state.companiesPerPage;
     const currentCompanies = this.state.companiesData.slice(indexOfFirstCompany, indexOfLastCompany);
 
-     // create the page numbers that will appear in the bottom of the list
+     // [page numer] create the page numbers that will appear in the bottom of the list
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(this.state.companiesData.length / this.state.companiesPerPage); i++) {
       pageNumbers.push(i);
@@ -108,14 +114,15 @@ class App extends Component {
         <li
           key={number}
           id={number}
-          onClick={this.handleClick}
+          onClick={this.addClickedClass}
           className={`page-number`}
         >
           {number}
         </li>
       );
     });
-
+    // end [page number]
+    
     return (
       <article>
         <header><h1>Find the best company for you!</h1></header>
