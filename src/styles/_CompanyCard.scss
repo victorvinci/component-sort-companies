@@ -1,11 +1,13 @@
-li {
+#list-total-companies li {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border: 1px dashed black;
+  border-top: 1px dotted lightgray;
+  border-left: 1px dotted lightgray;
   margin: 10px;
   padding: 5px;
+  box-shadow: 5px 5px darkgray;
 }
 
 img {

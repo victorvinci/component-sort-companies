@@ -8,6 +8,11 @@ article {
 h1{
   text-align: center;
   margin: 0px 10px 30px 10px;
+  padding: 10px;
+  text-transform: uppercase;
+  font-size: 36px;
+  text-shadow: 2px 2px grey;
+  box-shadow: 0px 5px lightgrey;
 }
 
 .buttons-container {
@@ -20,6 +25,11 @@ button{
   height: 55px;
   margin: 5px;
   font-size: 12px;
+  background: white;
+  border: none;
+  border-top: 1px dotted lightgray;
+  border-left: 1px dotted lightgray;
+  box-shadow: 5px 5px black;
 }
 
 #page-numbers {
@@ -27,8 +37,8 @@ button{
   display: flex;
 }
 
-#page-numbers > li {
-  margin-right: 0.3em;
+#page-numbers li {
+  margin: 0.5em;
   color: blue;
   user-select: none;
   cursor: pointer;
@@ -41,6 +51,7 @@ button{
 @media (max-width: 768px ) {
   h1{
     margin: 20px 10px;
+    font-size: 22px;
   }
 
   .buttons-container{
