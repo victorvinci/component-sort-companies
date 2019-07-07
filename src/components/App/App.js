@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 // import logo from '../../assets/logos/logo.svg';
-import './App.scss';
 
 import ListCompanies from '../list-companies/ListCompanies'
 

@@ -3,7 +3,7 @@ import React, {  Component } from 'react'
 import CompanyCard from '../company-card/CompanyCard'
 
 class ListCompanies  extends Component {
-
+  // Iterate through companies to render each in the CompanyCard component
   listFunction = () => {
   return this.props.companiesData.map((company => {
       return (
