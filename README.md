@@ -9,3 +9,5 @@ git clone `git@github.com:victorvinci/component-sort-companies.git`<br>
 
 `yarn start` - to run the project <br>
 `yarn build` - will create the build folder/package
+
+[See live demo here.](https://victorvinci.github.io/component-sort-companies/)
