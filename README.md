@@ -1,6 +1,8 @@
 # component-sort-companies
 A simple React component to sort a list of companies
 
+built with React version 16.8.6.
+
 git clone `git@github.com:victorvinci/component-sort-companies.git`<br>
 `cd /project-folder` <br>
 `yarn install`
