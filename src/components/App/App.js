@@ -138,7 +138,9 @@ class App extends Component {
           sortRelevance={this.sortRelevance} 
           sortYear={this.sortYear}>
         </ListCompanies>
-        <ul id="page-numbers">{renderPageNumbers}</ul>
+        <footer>
+          <ul id="page-numbers">{renderPageNumbers}</ul>
+        </footer>
       </article>
 
     );
