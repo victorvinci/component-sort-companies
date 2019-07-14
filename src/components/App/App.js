@@ -134,9 +134,6 @@ class App extends Component {
         <ListCompanies 
           companiesData={currentCompanies} 
           totalCompanies={this.state.totalCompanies} 
-          sortName={this.sortName} 
-          sortRelevance={this.sortRelevance} 
-          sortYear={this.sortYear}>
         </ListCompanies>
         <footer>
           <ul id="page-numbers">{renderPageNumbers}</ul>
