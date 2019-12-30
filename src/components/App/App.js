@@ -133,10 +133,7 @@ class App extends Component {
         </nav>
         <ListCompanies 
           companiesData={currentCompanies} 
-          totalCompanies={this.state.totalCompanies} 
-          sortName={this.sortName} 
-          sortRelevance={this.sortRelevance} 
-          sortYear={this.sortYear}>
+          totalCompanies={this.state.totalCompanies}>
         </ListCompanies>
         <footer>
           <ul id="page-numbers">{renderPageNumbers}</ul>
